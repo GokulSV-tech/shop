@@ -1,9 +1,12 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3000;
+
 app.get("/", (req, res) => {
-    res.send("Welcome to ShopEasy from Gokul!");
+  res.send("Welcome to ShopEasy from Gokul!");
 });
-app.listen(PORT, () => {
-    console.log('Server is running on port ${PORT}');   
+
+const server = app.listen(3000, () => {
+  console.log("Server running on port 3000");
 });
+
+module.exports = { app, server }; 
